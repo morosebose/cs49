@@ -6,8 +6,8 @@ Post: Karel is at the end of the row, facing east.
 """
 def main():  
     """Walk to the end of the row, spin when on a beeper."""
-    if beepers_present():		#  Fencepost problem: there 
-        spin()					#  could be a beeper at [1,1]         
+    if beepers_present():    #  Fencepost problem: there 
+        spin()               #  could be a beeper at [1,1]         
     while front_is_clear():
         move()
         if beepers_present():
