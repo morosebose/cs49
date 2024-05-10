@@ -1,7 +1,9 @@
 """
 filename.py
+
 Description of problem
-Programmer: Your name here, date modified here
+
+Programmer: Your name here, Date: date modified here
 """
 
 # import statements
@@ -11,7 +13,9 @@ Programmer: Your name here, date modified here
 def main():
     """
     Brief overview of what main() does
+    
     Preconditions:
+    
     Postconditions:
     """
     # write out high-level steps here
@@ -22,7 +26,9 @@ def main():
 def … ():
     """
     Brief description of what this function does
+    
     Preconditions:
+    
     Postconditions:
     """
 

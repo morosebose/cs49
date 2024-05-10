@@ -10,7 +10,15 @@ Programmer: Surajit A. Bose, Date: 2024.05.10
 MARS_CONVERSION_RATE = 0.378
 
 def main():
-    """Get Earth weight. Calculate and display Mars weight."""
+    """
+    Get Earth weight. Calculate and display Mars weight.
+    
+    Preconditions: None
+    
+    Postconditions: 
+    - Earth weight received from user
+    - Equivalent weight on Mars printed onscreen to two decimal places.
+    """
     earth_weight = float(input("Enter a weight on Earth: "))
     mars_weight = earth_weight * MARS_CONVERSION_RATE
     mars_weight = round(mars_weight, 2)
