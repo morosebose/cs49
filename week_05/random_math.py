@@ -21,7 +21,6 @@ def main():
     for i in range(4):
         my_num = randint(200, 1000)
         my_sqrt = math.sqrt(my_num)
-        rounded_sqrt = round(my_sqrt, 2)
         print(f'Number is: {my_num}, square root is: {my_sqrt}')
 
 if __name__ == "__main__":
