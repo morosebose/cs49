@@ -1,7 +1,7 @@
 """
 filename.py
 Description of problem
-Programmer: Your name here. date modified here
+Programmer: Your name here, date modified here
 """
 
 # import statements
