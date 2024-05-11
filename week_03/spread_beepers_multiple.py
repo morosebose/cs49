@@ -1,21 +1,27 @@
-from karel.stanfordkarel import *
-
 """
 spread_beepers_multiple.py
 
-Karel needs to spread out a pile of beepers to cover
-as many consecutive corners as there are beepers. 
+In a world with possibly multiple rows, each row has a pile of beepers. In each row, 
+Karel needs to spread out the pile of beepers to cover as many consecutive corners
+as there are beepers. 
 Note: (1) Karel does not know how to count 
     (2) Karel's bag has infinite beepers
     (3) The row is long enough to accommodate all beepers in its pile
     (4) A beeper will never need to be placed in the last column of a row.
+        
+Programmer: Surajit A. Bose, Date: 2024.04.26
 """
+
+from karel.stanfordkarel import *
+
 def main():
     """Spread beepers for multiple rows.
-    Pre: Somewhere in each row is a pile of n beepers.
+    
+    Preconditions: Somewhere in each row is a pile of n beepers.
         Karel is in the bottom row first corner. 
-        Karel is facing east.    
-    Post: Beepers are spread over n corners in each row. 
+        Karel is facing east. 
+           
+    Postconditions: Beepers are spread over n corners in each row. 
         Karel is in the top row first corner, facing east.
     """
     spread_single_row()     # Fencepost problem
@@ -24,29 +30,37 @@ def main():
         spread_single_row() 
 
 def spread_single_row():
-    """Spread beepers for a single row.
-    Pre: Karel is standing at the end of a row facing east.
+    """
+    Spread beepers for a single row.
+    
+    Preconditions: Karel is standing at the end of a row facing east.
         Somewhere in the row is a pile of n beepers.
-    Post: Beepers are spread out over n corners. 
+        
+    Postconditions: Beepers are spread out over n corners. 
         Karel is back to the original position.
     """
     move_to_pile()
     spread_beepers()
     
 def move_to_pile():
-    """Move Karel to the beeper pile.
-    Pre: Karel is facing east at the beginning of a row.
-    Post: Karel is atop the pile of beepers.
+    """
+    Move Karel to the beeper pile.
+    
+    Preconditions: Karel is facing east at the beginning of a row.
+    
+    Postconditions: Karel is atop the pile of beepers.
     """
     while no_beepers_present():
         move()
 
 def spread_beepers():
-    """Pick up each beeper and place it where required.
-    Pre: There are one or more beepers in the pile.
-    Post: Beepers are spread out over consecutive
-        corners, beginning with the corner that had 
-        the pile. 
+    """
+    Pick up each beeper and place it where required.
+    
+    Preconditions: There are one or more beepers in the pile.
+    
+    Postconditions: Beepers are spread out over consecutive corners, 
+    beginning with the corner that had the pile. 
     """ 
     while beepers_present():
         pick_beeper()
@@ -58,26 +72,35 @@ def spread_beepers():
             return_home()
             
 def place_current_beeper():
-    """Move to where beeper needs to be, and place it.
-    Pre: Karel has picked one beeper from pile.
-    Post: The beeper is where it should be.
+    """
+    Move to where beeper needs to be, and place it.
+    
+    Preconditions: Karel has picked one beeper from pile.
+    
+    Postconditions: The beeper is where it should be.
     """
     while beepers_present():
         move()
     put_beeper()
             
 def return_to_pile():
-    """Move Karel to the pile of beepers.
-    Pre: Karel has put down a beeper.
-    Post: Karel is back on the pile for the next beeper.
+    """
+    Move Karel back to the pile of beepers.
+    
+    Preconditions: Karel has put down a beeper.
+    
+    Postconditions: Karel is back on the pile for the next beeper.
     """ 
     return_home()    
     move_to_pile()
 
 def return_home():
-    """Bring Karel back to initial position.
-    Pre: Karel is somewhere in the row, facing east.
-    Post: Karel is at the first corner, facing east.
+    """
+    Bring Karel back to initial position.
+    
+    Preconditions: Karel is somewhere in the row, facing east.
+    
+    Postconditions: Karel is at the first corner, facing east.
     """
     turn_around()
     while front_is_clear():
@@ -85,18 +108,24 @@ def return_home():
     turn_around()
 
 def turn_around():
-    """Karel does a 360º.
-    Pre: Karel faces one direction.
-    Post: Karel faces the opposite direction.
+    """
+    Karel does a 360º.
+    
+    Preconditions: Karel faces one direction.
+    
+    Postconditions: Karel faces the opposite direction.
     """
     turn_left()
     turn_left()
 
 def move_to_next_row():
-    """Move up a row.
-    Pre: Karel is facing east at the beginning of a row.
+    """
+    Move Karel up a row.
+    
+    Preconditions: Karel is facing east at the beginning of a row.
         There is a row above.
-    Post: Karel is at the beginning of the row above. 
+        
+    Postconditions: Karel is at the beginning of the row above. 
         Karel is facing east.
     """
     turn_left()
@@ -104,9 +133,12 @@ def move_to_next_row():
     turn_right()
 
 def turn_right():
-    """Turn Karel to its right.
-    Pre: Karel is facing in a certain direction.
-    Post: Karel is facing right of original direction.
+    """
+    Turn Karel to its right.
+    
+    Preconditions: None
+    
+    Postconditions: Karel is facing to its right from its original direction.
     """
     for i in range(3):
         turn_left()
