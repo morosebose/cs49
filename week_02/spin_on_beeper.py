@@ -9,7 +9,8 @@ Programmer: Surajit A. Bose, Date: May 3, 2024
 from karel.stanfordkarel import *
 
 def main():  
-    """Walk the length of a row, spinning when on a beeper.
+    """
+    Walk the length of a row, spinning when on a beeper.
     
     Preconditions: Karel is facing east at the beginning of a row.
         There are beepers at various corners in the row.
