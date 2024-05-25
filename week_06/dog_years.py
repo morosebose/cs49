@@ -22,7 +22,6 @@ def main():
     - User input is checked
     - When appropriate, the age in dog years is displayed on the console.
     """
-    
     age = int(input("Enter an age in human years: "))
     while age != SENTINEL :
         if age < 0 :
