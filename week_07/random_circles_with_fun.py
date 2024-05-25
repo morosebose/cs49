@@ -42,7 +42,6 @@ def draw_random_circles(canvas):
     
     Returns: None
     """
-    
     for i in range (N_CIRCLES):
         left_x = random.randint(0, CANVAS_WIDTH - CIRCLE_SIZE)
         top_y = random.randint(CIRCLE_SIZE, CANVAS_HEIGHT - CIRCLE_SIZE)
