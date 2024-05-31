@@ -1,3 +1,10 @@
+"""
+medical_test_simulator.py
+
+Calculate the expected percentage of false negatives for a diagnostic test.
+
+Programmer: your_name_here, Date: date_modified_here
+"""
 import random
 
 def simulate_tests(num_people, test_accuracy, infection_rate):
@@ -18,11 +25,15 @@ def simulate_tests(num_people, test_accuracy, infection_rate):
         # Inside the loop:
         # - simulate whether the individual is infected
         # - simulate whether the test is accurate
+        # Hint: The code 'is_true = random.random < 0.5' will
+        # set the variable 'is_true' to True 50% of the time.
+        # How could you probabilistically set these two variables:
+        # person_is_infected and test_is_accurate?
+        
+        
+        # Still inside the loop:
         # - based on simulations, increment one of the four tallies.
-    # Hint: The code 'is_true = random.random < 0.5' 
-    # will set the variable 'is_true' to True 50% of the time.
-    # How could you probabilistically set these two variables:
-    # person_is_infected and test_is_accurate?
+
 
     # After loop is done, print out the four values
     print() # what goes inside the parentheses? Repeat for each value
@@ -31,6 +42,13 @@ def simulate_tests(num_people, test_accuracy, infection_rate):
     return # what goes here? What is the formula to use?
 
 def main():
+    """
+    Get user input about diagnostic and display percentage of false positives.
+    
+    Preconditions: None
+    
+    Postconditions: Percentage of false positives is displayed onscreen
+    """
     # Get inputs
     num = int(input('Number of people: '))
     # Other inputs ...

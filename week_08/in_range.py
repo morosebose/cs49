@@ -3,10 +3,10 @@ in_range.py
 
 Check if a given integer is inside a given range.
 
-Programmer: your_name_here, Date: date_modified_here
+Programmer: Surajit A. Bose, Date: 2024.05.31
 """
 
-def in_range(n, low, high)
+def in_range(n, low, high): 
     """
     Check whether given integer n is between low and high, inclusive.
 
@@ -21,8 +21,8 @@ def in_range(n, low, high)
 
     Returns: Boolean whether n is between low and high, inclusive. 
     """
-    # your code here
-
+    return low <= n <= high
+    
 
 def main():
     """
@@ -36,13 +36,19 @@ def main():
     """
     # Get user input
     n = int(input('n: '))
-    
-    # Your code here:
+
     # Get the other inputs
+    lo = int(input('low: '))
+    hi = int(input('high: '))
+
     # Pass all of them as arguments in a call to in_range()
     # Print message based on the return from in_range()
+    if in_range(n, lo, hi):
+        print('n is in range!')
+    else:
+        print('n is not in range ...')
+    
     
 # There is no need to edit code beyond this point
-
 if __name__ == '__main__':
     main()
